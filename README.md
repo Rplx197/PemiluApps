@@ -5,7 +5,6 @@ PemiluApps adalah aplikasi pemilihan umum (pemilu) yang dibangun menggunakan bah
 ## Fitur
 
 - Pendaftaran dan otentikasi pengguna (User dan Panitia).
-- Tampilan dashboard untuk Panitia dengan fitur administratif.
 - Kemampuan untuk membuat, mengelola, dan menghapus pemilihan umum.
 - Pemilihan umum dengan daftar kandidat yang dapat diakses oleh pengguna.
 - Sistem suara yang aman dan terverifikasi.
