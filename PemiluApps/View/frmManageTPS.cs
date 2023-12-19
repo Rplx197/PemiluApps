@@ -18,6 +18,7 @@ namespace PemiluApps
 {
     public partial class frmManageTPS : Form
     {
+        private TPSController tpsController;
         public frmManageTPS()
         {
             InitializeComponent();
@@ -41,13 +42,13 @@ namespace PemiluApps
 
         private void grdTPS_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            TPSController tpsController = new TPSController();
+            tpsController = new TPSController();
             tpsController.grdClick(e, grdTPS,txtTPSID, txtNamaTPS, txtPetugas);
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            TPSController tpsController = new TPSController();
+            tpsController = new TPSController();
             tpsController.ClearData(txtTPSID, txtNamaTPS, txtPetugas);
         }
 
@@ -64,7 +65,7 @@ namespace PemiluApps
                 using (DBContext context = new DBContext())
                 {
                     int idToAdd = int.Parse(txtTPSID.Text);
-                    TPSController tpsController = new TPSController();
+                    tpsController = new TPSController();
 
                     tpsController.Insert(insertTPS, grdTPS);
                     tpsController.ClearData(txtTPSID, txtNamaTPS, txtPetugas);
@@ -88,7 +89,7 @@ namespace PemiluApps
 
                 using (DBContext context = new DBContext())
                 {
-                    TPSController tpsController = new TPSController();
+                    tpsController = new TPSController();
                     tpsController.Update(updateTPS, grdTPS);
                 }
             }
@@ -108,7 +109,7 @@ namespace PemiluApps
 
                 using (DBContext context = new DBContext())
                 {
-                    TPSController tpsController = new TPSController();
+                    tpsController = new TPSController();
                     tpsController.Delete(deleteTPS, grdTPS);
                     tpsController.ClearData(txtTPSID, txtNamaTPS, txtPetugas);
                 }
@@ -125,7 +126,7 @@ namespace PemiluApps
             {
                 using (DBContext context = new DBContext())
                 {
-                    TPSController tpsController = new TPSController();
+                    tpsController = new TPSController();
                     tpsController.Search(txtSearch, grdTPS);
                     tpsController.ClearData(txtTPSID, txtNamaTPS, txtPetugas);
                 }

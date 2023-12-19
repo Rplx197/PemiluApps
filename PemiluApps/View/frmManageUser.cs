@@ -17,6 +17,7 @@ namespace PemiluApps
 {
     public partial class frmManageUser : Form
     {
+        private UserController userController;
         public frmManageUser()
         {
             InitializeComponent();
@@ -40,7 +41,7 @@ namespace PemiluApps
 
         private void grdUser_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            UserController userController = new UserController();
+            userController = new UserController();
             userController.grdClick(e, grdUser, txtUserID, txtNoKTP, txtPassword, txtTPSID);
         }
 
@@ -68,7 +69,7 @@ namespace PemiluApps
                 using (DBContext context = new DBContext())
                 {
                     int idToAdd = int.Parse(txtUserID.Text);
-                    UserController userController = new UserController();
+                    userController = new UserController();
 
                     userController.Insert(insertUser, grdUser);
                     userController.ClearData(txtUserID, txtNoKTP, txtPassword, txtTPSID);
@@ -93,7 +94,7 @@ namespace PemiluApps
 
                 using (DBContext context = new DBContext())
                 {
-                    UserController userController = new UserController();
+                    userController = new UserController();
                     userController.Update(updateUser, grdUser);
                 }
             }
@@ -113,7 +114,7 @@ namespace PemiluApps
 
                 using (DBContext context = new DBContext())
                 {
-                    UserController userController = new UserController();
+                    userController = new UserController();
                     userController.Delete(deleteUser, grdUser);
                     userController.ClearData(txtUserID, txtNoKTP, txtPassword, txtTPSID);
                 }
@@ -126,7 +127,7 @@ namespace PemiluApps
 
         private void btnGeneratePassword_Click(object sender, EventArgs e)
         {
-            UserController userController = new UserController();
+            userController = new UserController();
             int passwordLength = 8;
             string password = userController.GeneratePassword(passwordLength);
             txtPassword.Text = password;
@@ -138,7 +139,7 @@ namespace PemiluApps
             {
                 using (DBContext context = new DBContext())
                 {
-                    UserController userController = new UserController();
+                    userController = new UserController();
                     userController.Search(txtSearch, grdUser);
                     userController.ClearData(txtUserID, txtNoKTP, txtPassword, txtTPSID);
                 }
@@ -151,7 +152,7 @@ namespace PemiluApps
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            UserController userController = new UserController();
+            userController = new UserController();
             userController.ClearData(txtUserID, txtNoKTP, txtPassword, txtTPSID);
         }
     }

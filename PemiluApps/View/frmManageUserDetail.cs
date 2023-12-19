@@ -17,6 +17,7 @@ namespace PemiluApps
 {
     public partial class frmManageUserDetail : Form
     {
+        private UserDetailController userDetailController;
         public frmManageUserDetail()
         {
             InitializeComponent();
@@ -40,14 +41,14 @@ namespace PemiluApps
 
         private void grdUserDetail_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            UserDetailController userDetailController = new UserDetailController();
+            userDetailController = new UserDetailController();
             userDetailController.grdClick(e, grdUserDetail, txtNoKtp, txtNama, txtAlamat, cmbKelamin, dtpTanggalLahir
                         , cmbAgama, cmbStatusMenikah, txtPekerjaan, cmbKewarganegaraan);
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            UserDetailController userDetailController = new UserDetailController();
+            userDetailController = new UserDetailController();
             userDetailController.ClearData(txtNoKtp, txtNama, txtAlamat, cmbKelamin, dtpTanggalLahir
                 , cmbAgama, cmbStatusMenikah, txtPekerjaan, cmbKewarganegaraan);
         }
@@ -80,7 +81,7 @@ namespace PemiluApps
                 using (DBContext context = new DBContext())
                 {
                     int idToAdd = int.Parse(txtNoKtp.Text);
-                    UserDetailController userDetailController = new UserDetailController();
+                    userDetailController = new UserDetailController();
 
                     userDetailController.Insert(insertUserDetail, grdUserDetail);
                     userDetailController.ClearData(txtNoKtp, txtNama, txtAlamat, cmbKelamin, dtpTanggalLahir
@@ -122,7 +123,7 @@ namespace PemiluApps
 
                 using (DBContext context = new DBContext())
                 {
-                    UserDetailController userDetailController = new UserDetailController();
+                    userDetailController = new UserDetailController();
                     userDetailController.Update(updateUserDetail, grdUserDetail);
                 }
             }
@@ -142,7 +143,7 @@ namespace PemiluApps
 
                 using (DBContext context = new DBContext())
                 {
-                    UserDetailController userDetailController = new UserDetailController();
+                    userDetailController = new UserDetailController();
                     userDetailController.Delete(deleteUserDetail, grdUserDetail);
                     userDetailController.ClearData(txtNoKtp, txtNama, txtAlamat, cmbKelamin, dtpTanggalLahir
                         , cmbAgama, cmbStatusMenikah, txtPekerjaan, cmbKewarganegaraan);
@@ -160,7 +161,7 @@ namespace PemiluApps
             {
                 using (DBContext context = new DBContext())
                 {
-                    UserDetailController userDetailController = new UserDetailController();
+                    userDetailController = new UserDetailController();
                     userDetailController.Search(txtSearch, grdUserDetail);
                     userDetailController.ClearData(txtNoKtp, txtNama, txtAlamat, cmbKelamin, dtpTanggalLahir
                         , cmbAgama, cmbStatusMenikah, txtPekerjaan, cmbKewarganegaraan);

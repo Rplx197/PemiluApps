@@ -17,7 +17,10 @@ namespace PemiluApps
     {
         int userid, tpsid;
         string noktp;
-        
+
+        private VotingController votingController;
+
+
         private void imgCapres1_Click(object sender, EventArgs e)
         {
             Voting voting = new Voting();
@@ -25,7 +28,7 @@ namespace PemiluApps
             voting.TPSID = tpsid;
             voting.Vote = 1;
 
-            VotingController votingController = new VotingController();
+            votingController = new VotingController();
             votingController.voting(voting, this);
         }
 
@@ -36,7 +39,7 @@ namespace PemiluApps
             voting.TPSID = tpsid;
             voting.Vote = 1;
 
-            VotingController votingController = new VotingController();
+            votingController = new VotingController();
             votingController.voting(voting, this);
         }
 
@@ -47,7 +50,7 @@ namespace PemiluApps
             voting.TPSID = tpsid;
             voting.Vote = 1;
 
-            VotingController votingController = new VotingController();
+            votingController = new VotingController();
             votingController.voting(voting, this);
         }
         private void lblCawapres1_Click(object sender, EventArgs e)
@@ -57,7 +60,7 @@ namespace PemiluApps
             voting.TPSID = tpsid;
             voting.Vote = 1;
 
-            VotingController votingController = new VotingController();
+            votingController = new VotingController();
             votingController.voting(voting, this);
         }
 
@@ -68,7 +71,7 @@ namespace PemiluApps
             voting.TPSID = tpsid;
             voting.Vote = 2;
 
-            VotingController votingController = new VotingController();
+            votingController = new VotingController();
             votingController.voting(voting, this);
         }
 
@@ -79,7 +82,7 @@ namespace PemiluApps
             voting.TPSID = tpsid;
             voting.Vote = 2;
 
-            VotingController votingController = new VotingController();
+            votingController = new VotingController();
             votingController.voting(voting, this);
         }
 
@@ -90,7 +93,7 @@ namespace PemiluApps
             voting.TPSID = tpsid;
             voting.Vote = 2;
 
-            VotingController votingController = new VotingController();
+            votingController = new VotingController();
             votingController.voting(voting, this);
         }
 
@@ -101,7 +104,7 @@ namespace PemiluApps
             voting.TPSID = tpsid;
             voting.Vote = 2;
 
-            VotingController votingController = new VotingController();
+            votingController = new VotingController();
             votingController.voting(voting, this);
         }
 
@@ -112,7 +115,7 @@ namespace PemiluApps
             voting.TPSID = tpsid;
             voting.Vote = 3;
 
-            VotingController votingController = new VotingController();
+            votingController = new VotingController();
             votingController.voting(voting, this);
         }
 
@@ -123,7 +126,7 @@ namespace PemiluApps
             voting.TPSID = tpsid;
             voting.Vote = 3;
 
-            VotingController votingController = new VotingController();
+            votingController = new VotingController();
             votingController.voting(voting, this);
         }
 
@@ -134,7 +137,7 @@ namespace PemiluApps
             voting.TPSID = tpsid;
             voting.Vote = 3;
 
-            VotingController votingController = new VotingController();
+            votingController = new VotingController();
             votingController.voting(voting, this);
         }
 
@@ -145,7 +148,7 @@ namespace PemiluApps
             voting.TPSID = tpsid;
             voting.Vote = 3;
 
-            VotingController votingController = new VotingController();
+            votingController = new VotingController();
             votingController.voting(voting, this);
         }
 
@@ -165,7 +168,7 @@ namespace PemiluApps
             voting.TPSID = tpsid;
             voting.Vote = 1;
 
-            VotingController votingController = new VotingController();
+            votingController = new VotingController();
             votingController.voting(voting, this);
         }
 
@@ -176,7 +179,7 @@ namespace PemiluApps
             voting.TPSID = tpsid;
             voting.Vote = 2;
 
-            VotingController votingController = new VotingController();
+            votingController = new VotingController();
             votingController.voting(voting, this);
         }
 
@@ -187,13 +190,13 @@ namespace PemiluApps
             voting.TPSID = tpsid;
             voting.Vote = 3;
 
-            VotingController votingController = new VotingController();
+            votingController = new VotingController();
             votingController.voting(voting, this);
         }
 
         private void frmVoting_Load(object sender, EventArgs e)
         {
-            VotingController votingController = new VotingController();
+            votingController = new VotingController();
             votingController.LoadCandidatesFromDatabase(this);
         }
     }
